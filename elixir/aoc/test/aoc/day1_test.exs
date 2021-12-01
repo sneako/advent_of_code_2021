@@ -19,7 +19,7 @@ defmodule Aoc.Day1Test do
 
     test "solution" do
       input = Aoc.file_to_int_list("inputs/day1.txt")
-      assert Aoc.Day1.part_two(input) == 1446
+      assert Aoc.Day1.part_two(input) == 1486
     end
   end
 
