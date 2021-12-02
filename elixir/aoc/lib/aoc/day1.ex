@@ -10,6 +10,14 @@ defmodule Aoc.Day1 do
     |> elem(1)
   end
 
+  def part_one_nx(input) do
+    tensor = Nx.tensor(input)
+
+    Nx.greater(tensor[1..-1//1], tensor[0..-2//1])
+    |> Nx.sum()
+    |> Nx.to_scalar()
+  end
+
   def part_two(input) do
     [first | rest] = Enum.chunk_every(input, 3, 1)
 

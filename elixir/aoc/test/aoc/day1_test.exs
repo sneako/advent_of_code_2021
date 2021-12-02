@@ -1,9 +1,13 @@
 defmodule Aoc.Day1Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   describe "part one" do
     test "example" do
       assert Aoc.Day1.part_one(example_input()) == 7
+    end
+
+    test "nx - example" do
+      assert Aoc.Day1.part_one_nx(example_input()) == 7
     end
 
     test "solution" do
@@ -24,21 +28,19 @@ defmodule Aoc.Day1Test do
   end
 
   defp example_input do
-    input =
-      """
-      199
-      200
-      208
-      210
-      200
-      207
-      240
-      269
-      260
-      263
-      """
-      |> String.trim()
-      |> String.split("\n")
-      |> Enum.map(&String.to_integer/1)
+    """
+    199
+    200
+    208
+    210
+    200
+    207
+    240
+    269
+    260
+    263
+    """
+    |> String.split("\n", trim: true)
+    |> Enum.map(&String.to_integer/1)
   end
 end
